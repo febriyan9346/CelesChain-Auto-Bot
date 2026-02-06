@@ -229,12 +229,15 @@ class CelesBot:
                 
             elif t_type == "SEND_TOKEN":
                 tx_hash = self.do_send_token(w3, pk, my_addr_checksum)
+                self.log(f"Send Token Success", "SUCCESS")
                 
             elif t_type == "SWAP":
                 tx_hash = self.do_swap(w3, pk, my_addr_checksum)
+                self.log(f"Swap Success", "SUCCESS")
                 
             elif "LIQUIDITY" in t_type:
                 tx_hash = self.do_add_liq(w3, pk, my_addr_checksum)
+                self.log(f"Add Liquidity Success", "SUCCESS")
                 
             else:
                 tx_hash = "social_done"
